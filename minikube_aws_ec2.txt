@@ -33,3 +33,28 @@ Install Helm:
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
 chmod 700 get_helm.sh
 ./get_helm.sh
+
+Install Helm (If there is error about sha checksum):
+git clone https://github.com/helm/helm.git
+cp helm/scripts/get-helm-3 get-helm.sh
+chmod 700 get-helm.sh
+./get-helm.sh
+
+Helm add repo:
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo add stable https://charts.helm.sh/stable
+
+Helm install Redis:
+
+helm install redis bitnami/redis
+
+Helm install Spark:
+
+helm install spark bitnami/spark
+
+Helm install Hadoop:
+helm install \
+    --set yarn.nodeManager.resources.limits.memory=4096Mi \
+    --set yarn.nodeManager.replicas=1 \
+    stable/hadoop --generate-name
