@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triển khai app</title>
+    <link rel="stylesheet" href="{{url_for('static',filename = 'index.css')}}">
+</head>
+<body>
+  <h1 class="MoDau">Triển khai ứng dụng trên minikube</h1>
+    <h4>Có 2 cách để triển khai ứng dụng trên minikube: sử dụng công cụ dòng lệnh kubectl hoặc trình quản lý gói helm của Kubernetes</h4>
+    <div class="chuachuvanut">
+        <p><h3>Sử dụng Kubectl</h3></p>
+        <a href=vmd_timestamp2 ><button class="chu1">Deploy nginx using Kubectl</button></a>
+        <a href=vmd_timestamplong ><button class="chu2">Delete nginx application using Kubectl</button></a>
+    </div>
+
+    <div class="chuachuvanut">
+        <p><h3>Sử dụng Helm</h3></p>
+        <a href=vmd_timestamp3 ><button>Deploy spark images using helm</button></a>
+        <a href=vmd_timestamplong ><button>Delete spark pods using helm</button></a>
+    </div>
+</body>
+</html>
