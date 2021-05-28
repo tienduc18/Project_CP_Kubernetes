@@ -12,14 +12,22 @@
     <h4>Có 2 cách để triển khai ứng dụng trên minikube: sử dụng công cụ dòng lệnh kubectl hoặc trình quản lý gói helm của Kubernetes</h4>
     <div class="chuachuvanut">
         <p><h3>Sử dụng Kubectl</h3></p>
-        <a href=vmd_timestamp2 ><button class="chu1">Deploy nginx using Kubectl</button></a>
-        <a href=vmd_timestamplong ><button class="chu2">Delete nginx application using Kubectl</button></a>
+        <form action="/deploy_nginx" method="POST">
+            <input type="submit" value="Deploy nginx using Kubectl" class="chu1"></input>
+        </form>
+        <form action="/deploy_temp" method="POST">
+            <input type="submit" value="Delete nginx application using Kubectl" class="chu2"></input>
+        </form>
     </div>
 
     <div class="chuachuvanut">
         <p><h3>Sử dụng Helm</h3></p>
-        <a href=vmd_timestamp3 ><button>Deploy spark images using helm</button></a>
-        <a href=vmd_timestamplong ><button>Delete spark pods using helm</button></a>
+        <form action="/deploy_spark" method="POST">
+            <input type="submit" value="Deploy spark using Helm" class="chu1"></input>
+        </form>
+        <form action="/deploy_spark" method="POST">
+            <input type="submit" value="Delete spark application using Helm" class="chu2"></input>
+        </form>
     </div>
 </body>
 </html>

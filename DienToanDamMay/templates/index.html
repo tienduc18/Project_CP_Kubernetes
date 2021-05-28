@@ -11,9 +11,15 @@
     <h1 class="MoDau">Xin chào mừng bạn đến với kubernetes</h1>
     <img src="{{url_for('static',filename = 'img/tải xuống.png')}}" alt="" class="Hinh">
     <div class="chuanut">
-        <a href=vmd_timestamp1><button>Start</button></a>
-        <a href=vmd_timestamplong><button>Delete</button></a>
-        <a href=vmd_timestamplong><button>Stop</button></a>
+        <form action="/deploy_apps" method="POST">
+            <input type="submit" value="Start cluster" class="chu1"></input>
+        </form>
+        <form action="/deploy_temp" method="POST">
+            <input type="submit" value="Stop cluster" class="chu1"></input>
+        </form>
+        <form action="/deploy_temp" method="POST">
+            <input type="submit" value="Delete cluster" class="chu1"></input>
+        </form>
     </div>
 </body>
 </html>
