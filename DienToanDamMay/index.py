@@ -25,11 +25,11 @@ def vmd_timestamp():
 @app.route('/deploy_nginx', methods=['POST','GET'])
 def Trang2():
     if request.method == 'POST':
-        list = os.popen('kubectl get po').readlines()
+        list = os.popen('helm ls').readlines()
         matrix = []
         for i in list:
-            ls  = i.split('\t')
-            ls[len(ls) - 1].split('\n')
+            ls  = i.replace(" ", "").split('\t')
+            i[len(i)-1] = i[len(i)-1][-2]
             matrix.append(ls)
         print(matrix)
         contex = {
@@ -50,8 +50,8 @@ def Trang3():
         list = os.popen('helm ls').readlines()
         matrix = []
         for i in list:
-            ls  = i.split('\t')
-            ls[len(ls) - 1].split('\n')
+            ls  = i.replace(" ", "").split('\t')
+            i[len(i)-1] = i[len(i)-1][-2]
             matrix.append(ls)
         print(matrix)
         contex = {
