@@ -41,7 +41,7 @@ def Trang2():
                 ls[len(ls)-1] = ls[len(ls)-1][-2]
                 matrix.append(ls)
             print(matrix)
-            return render_template('Trang2.html', mydata = matrix)
+            return render_template('Trang2.html', mydata = matrix[1:len(matrix)])
         elif request.form['submit_button'] == 'Delete redis application using Helm':
             output = os.system('helm delete redis')
             return render_template('Trang1.html')
