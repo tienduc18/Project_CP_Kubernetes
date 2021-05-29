@@ -28,12 +28,13 @@ def vmd_timestamp():
     else:
         return render_template('index.html')
 
-@app.route('/deploy_nginx', methods=['POST','GET'])
+@app.route('/deploy_redis', methods=['POST','GET'])
 def Trang2():
     if request.method == 'POST':
-        if request.form['submit_button'] == 'Deploy nginx using Kubectl':
-            output = os.system('kubectl apply -f https://k8s.io/examples/application/deployment.yaml')
-            list = os.popen('kubectl get pods -l app=nginx').readlines()
+        if request.form['submit_button'] == 'Deploy redis using Helm':
+            output = os.system('helm repo add bitnami https://charts.bitnami.com/bitnami')
+            output = os.system('helm install redis bitnami/redis')
+            list = os.popen('helm ls').readlines()
             matrix = []
             for i in list:
                 ls  = i.replace(" ", "").split('\t')
@@ -41,8 +42,8 @@ def Trang2():
                 matrix.append(ls)
             print(matrix)
             return render_template('Trang2.html', mydata = matrix)
-        elif request.form['submit_button'] == 'Delete nginx application using Kubectl':
-            output = os.system('kubectl delete deployment nginx-deployment')
+        elif request.form['submit_button'] == 'Delete redis application using Helm':
+            output = os.system('helm delete redis')
             return render_template('Trang1.html')
     else:
         return render_template('Trang1.html')
