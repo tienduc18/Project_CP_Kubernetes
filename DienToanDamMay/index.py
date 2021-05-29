@@ -18,6 +18,7 @@ def vmd_timestamp():
     if request.method == 'POST':
         # output = RunCommand("ls")
         # print(output)
+        output = os.popen('minikube start')
         return render_template('Trang1.html')
     else:
         return
