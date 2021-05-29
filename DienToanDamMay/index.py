@@ -51,25 +51,20 @@ def Trang2():
 @app.route('/deploy_spark', methods=['POST','GET'])
 def Trang3():
     if request.method == 'POST':
-        list = os.popen('helm ls').readlines()
-        matrix = []
-        for i in list:
-            ls  = i.replace(" ", "").split('\t')
-            ls[len(ls)-1] = ls[len(ls)-1][-2]
-            matrix.append(ls)
-        print(matrix)
-        contex = {
-            "pod1":"spark_master_0",
-            "Status1":"READY",
-            "Age1":"12s",
-            "pod2":"spark_worker_0",
-            "Status2":"READY",
-            "Age2":"23s",
-            "pod3": "spark_worker_1",
-            "Status3": "READY",
-            "Age3": "45s",
-        }
-        return render_template('Trang3.html', mydata = contex)
+        if request.form['submit_button'] == 'Deploy spark using Helm':
+            output = os.system('helm repo add bitnami https://charts.bitnami.com/bitnami')
+            output = os.system('helm install spark bitnami/spark')
+            list = os.popen('helm ls').readlines()
+            matrix = []
+            for i in list:
+                ls  = i.replace(" ", "").split('\t')
+                ls[len(ls)-1] = ls[len(ls)-1][-2]
+                matrix.append(ls)
+            print(matrix)
+            return render_template('Trang3.html', mydata = matrix[1:len(matrix)])
+        elif request.form['submit_button'] == 'Delete spark application using Helm':
+            output = os.system('helm delete spark')
+            return render_template('Trang1.html')
     else:
         return
 
