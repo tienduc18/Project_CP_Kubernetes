@@ -16,14 +16,16 @@
     </form>
     <table border="1">
         <tr>
-            <th colspan="1">Pod</th>
+            <th colspan="1">Name</th>
+			<th colspan="1">Ready</th>
 			<th colspan="1">Status</th>
+			<th colspan="1">Restarts</th>
 			<th colspan="1">Age</th>
         </tr>
         <tr>
-        	{{% for row in mydata %}}
+        	{% for row in mydata %}
         	<td>{{row}}</td>
-        	{{% endfor %}}
+        	{% endfor %}
         </tr>
     </table>
 </body>
