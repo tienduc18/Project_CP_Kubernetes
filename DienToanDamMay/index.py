@@ -26,29 +26,26 @@ def vmd_timestamp():
             output = os.system('minikube delete')
             return render_template('index.html')
     else:
-        return
+        return render_template('index.html')
 
 @app.route('/deploy_nginx', methods=['POST','GET'])
 def Trang2():
     if request.method == 'POST':
-        list = os.popen('helm ls').readlines()
-        matrix = []
-        for i in list:
-            ls  = i.replace(" ", "").split('\t')
-            ls[len(ls)-1] = ls[len(ls)-1][-2]
-            matrix.append(ls)
-        print(matrix)
-        contex = {
-            "pod1":"NGINX1",
-            "Status1":"READY",
-            "Age1":"12s",
-            "pod2":"NGINX2",
-            "Status2":"READY",
-            "Age2":"23s",
-        }
-        return render_template('Trang2.html', mydata = contex)
+        if request.form['submit_button'] == 'Deploy nginx using Kubectl':
+            output = os.system('kubectl apply -f https://k8s.io/examples/application/deployment.yaml')
+            list = os.popen('kubectl get pods -l app=nginx').readlines()
+            matrix = []
+            for i in list:
+                ls  = i.replace(" ", "").split('\t')
+                ls[len(ls)-1] = ls[len(ls)-1][-2]
+                matrix.append(ls)
+            print(matrix)
+            return render_template('Trang2.html', mydata = matrix)
+        elif request.form['submit_button'] == 'Delete nginx application using Kubectl':
+            output = os.system('kubectl delete deployment nginx-deployment')
+            return render_template('Trang1.html')
     else:
-        return
+        return render_template('Trang1.html')
 
 @app.route('/deploy_spark', methods=['POST','GET'])
 def Trang3():

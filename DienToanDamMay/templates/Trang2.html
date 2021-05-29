@@ -21,14 +21,9 @@
 			<th colspan="1">Age</th>
         </tr>
         <tr>
-            <td>{{mydata.pod1}}</td>
-            <td>{{mydata.Status1}}</td>
-            <td>{{mydata.Age1}}</td>
-        </tr>
-        <tr>
-            <td>{{mydata.pod2}}</td>
-            <td>{{mydata.Status2}}</td>
-            <td>{{mydata.Age2}}</td>
+        	{{% for row in mydata %}}
+        	<td>{{row}}</td>
+        	{{% endfor %}}
         </tr>
     </table>
 </body>
