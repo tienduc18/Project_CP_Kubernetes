@@ -13,21 +13,17 @@
     <div class="chuachuvanut">
         <p><h3>Sử dụng Kubectl</h3></p>
         <form action="/deploy_nginx" method="POST">
-            <input type="submit" value="Deploy nginx using Kubectl" class="chu1"></input>
-        </form>
-        <form action="/deploy_temp" method="POST">
-            <input type="submit" value="Delete nginx application using Kubectl" class="chu2"></input>
+            <input type="submit" name="submit_button" value="Deploy nginx using Kubectl" class="chu1"></input>
+            <input type="submit" name="submit_button" value="Delete nginx application using Kubectl" class="chu2"></input>
         </form>
     </div>
 
     <div class="chuachuvanut">
         <p><h3>Sử dụng Helm</h3></p>
         <form action="/deploy_spark" method="POST">
-            <input type="submit" value="Deploy spark using Helm" class="chu1"></input>
-        </form>
-        <form action="/deploy_spark" method="POST">
-            <input type="submit" value="Delete spark application using Helm" class="chu2"></input>
-        </form>
+            <input type="submit" name="submit_button" value="Deploy spark using Helm" class="chu1"></input>
+            <input type="submit" name="submit_button" value="Delete spark application using Helm" class="chu2"></input>
+        </form>        
     </div>
 </body>
 </html>

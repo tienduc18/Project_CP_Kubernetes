@@ -16,10 +16,15 @@ def index():
 @app.route('/deploy_apps', methods=['POST','GET'])
 def vmd_timestamp():
     if request.method == 'POST':
-        # output = RunCommand("ls")
-        # print(output)
-        output = os.system('minikube start')
-        return render_template('Trang1.html')
+        if request.form['submit_button'] == 'Start cluster':
+            output = os.system('minikube start')
+            return render_template('Trang1.html')
+        elif request.form['submit_button'] == 'Stop cluster':
+            output = os.system('minikube stop')
+            return render_template('index.html')
+        elif request.form['submit_button'] == 'Delete cluster':
+            output = os.system('minikube delete')
+            return render_template('index.html')
     else:
         return
 

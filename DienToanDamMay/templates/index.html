@@ -12,13 +12,9 @@
     <img src="{{url_for('static',filename = 'img/tải xuống.png')}}" alt="" class="Hinh">
     <div class="chuanut">
         <form action="/deploy_apps" method="POST">
-            <input type="submit" value="Start cluster" class="chu1"></input>
-        </form>
-        <form action="/deploy_temp" method="POST">
-            <input type="submit" value="Stop cluster" class="chu1"></input>
-        </form>
-        <form action="/deploy_temp" method="POST">
-            <input type="submit" value="Delete cluster" class="chu1"></input>
+            <input type="submit" name="submit_button" value="Start cluster" class="chu1"></input>
+            <input type="submit" name="submit_button" value="Stop cluster" class="chu1"></input>
+            <input type="submit" name="submit_button" value="Delete cluster" class="chu1"></input>
         </form>
     </div>
 </body>
