@@ -29,7 +29,7 @@ def Trang2():
         matrix = []
         for i in list:
             ls  = i.replace(" ", "").split('\t')
-            i[len(i)-1] = i[len(i)-1][-2]
+            ls[len(ls)-1] = ls[len(ls)-1][-2]
             matrix.append(ls)
         print(matrix)
         contex = {
@@ -51,7 +51,7 @@ def Trang3():
         matrix = []
         for i in list:
             ls  = i.replace(" ", "").split('\t')
-            i[len(i)-1] = i[len(i)-1][-2]
+            ls[len(ls)-1] = ls[len(ls)-1][-2]
             matrix.append(ls)
         print(matrix)
         contex = {
