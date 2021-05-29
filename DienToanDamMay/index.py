@@ -25,6 +25,13 @@ def vmd_timestamp():
 @app.route('/deploy_nginx', methods=['POST','GET'])
 def Trang2():
     if request.method == 'POST':
+        list = os.popen('kubectl get po').readlines()
+        matrix = []
+        for i in list:
+            ls  = i.split('\t')
+            ls[len(ls) - 1].split('\n')
+            matrix.append(ls)
+        print(matrix)
         contex = {
             "pod1":"NGINX1",
             "Status1":"READY",
@@ -40,6 +47,13 @@ def Trang2():
 @app.route('/deploy_spark', methods=['POST','GET'])
 def Trang3():
     if request.method == 'POST':
+        list = os.popen('helm ls').readlines()
+        matrix = []
+        for i in list:
+            ls  = i.split('\t')
+            ls[len(ls) - 1].split('\n')
+            matrix.append(ls)
+        print(matrix)
         contex = {
             "pod1":"spark_master_0",
             "Status1":"READY",
