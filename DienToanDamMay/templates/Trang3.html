@@ -10,15 +10,16 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <h1 class="MoDau">SPARK DEPLOYMENT WITH HELM</h1>
-    <form action="/describe_nginx" method="POST">
-        <input type="submit" value="Describe spark deployment using Kubectl" class="chu1"></input>
-    </form>
+    <h1 class="MoDau">SPARK DEPLOYMENT WITH HELM</h1>   
     <table border="1">
         <tr>
-            <th colspan="1">Pod</th>
+            <th colspan="1">Name</th>
+			<th colspan="1">Namespace</th>
+			<th colspan="1">Revision</th>
+			<th colspan="1">Updated</th>
 			<th colspan="1">Status</th>
-			<th colspan="1">Age</th>
+			<th colspan="1">Chart</th>
+			<th colspan="1">App Version</th>
         </tr>
         <tr>
         	{% for row in mydata %}
