@@ -1,0 +1,68 @@
+.MoDau,
+h4,
+.chuachuvanut {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.Hinh {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    height: 500px;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.Hinh:hover {
+    transform: scale(1.5);
+}
+
+
+.chuanut {
+    text-align: center;
+}
+
+.cacnut {
+    text-align: center;
+    margin-top: 20px
+}
+
+.trangmodau{
+    text-align: center;
+}
+
+
+.hinhnen2 {
+    background-image: url(./Trang2.2.jpg);
+    background-size: cover;
+}
+
+.chu1 {
+    margin-right: 20px;
+}
+
+.hinhnen1 {
+    background-image: url(./Trang1.1.jpg);
+    background-size: cover;
+}
+
+.hinhnen3 {
+    background-image: url(./Trang3.3.jpg);
+    background-size: cover;
+}
+
+.table1{
+    margin-left: 550px;
+}
+
+.table2{
+    margin-left: 550px;
+}
+
+
+
+
